@@ -1,4 +1,5 @@
 import React from 'react';
+import utdiLogo from '../assets/images/utdi-logo.png';
 
 const Education = () => {
   return (
@@ -15,6 +16,9 @@ const Education = () => {
           
           <div className="education-details">
             <div className="education-card">
+              <div className="education-logo">
+                <img src={utdiLogo} alt="Logo UTDI" className="utdi-logo" />
+              </div>
               <h3>Universitas Teknologi Digital Indonesia</h3>
               <p className="program">Program Studi Sistem Informasi</p>
               <p className="year">Tahun Masuk: 2023</p>
