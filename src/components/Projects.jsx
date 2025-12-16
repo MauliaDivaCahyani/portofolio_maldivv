@@ -1,4 +1,6 @@
 import React from 'react';
+import rumahSakitImage from '../assets/images/apotek-utdi.png';
+import perhotelanImage from '../assets/images/roomzy-hotel.png';
 
 const Projects = () => {
   const projects = [
@@ -35,7 +37,7 @@ const Projects = () => {
       description: 'Desain antarmuka sistem informasi rumah sakit dengan fokus pada user experience',
       technologies: ['UI/UX Design'],
       tools: ['Figma', 'Uizard'],
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80',
+      image: rumahSakitImage,
       githubLink: 'https://github.com/MauliaDivaCahyani/UI-UX-RUMAH-SAKIT.git',
       status: 'completed'
     },
@@ -45,7 +47,7 @@ const Projects = () => {
       description: 'Perancangan antarmuka pengguna untuk sistem manajemen hotel',
       technologies: ['UI/UX Design'],
       tools: ['Figma', 'Uizard'],
-      image: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80',
+      image: perhotelanImage,
       githubLink: 'https://github.com/MauliaDivaCahyani/UI-UX-PERHOTELAN.git',
       status: 'completed'
     },
@@ -78,7 +80,13 @@ const Projects = () => {
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80';
+                  }}
+                />
                 {project.status === 'coming-soon' && (
                   <div className="coming-soon-badge">Coming Soon</div>
                 )}

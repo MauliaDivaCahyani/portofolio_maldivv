@@ -23,6 +23,7 @@ const Navbar = () => {
           <a href="#education" onClick={() => scrollToSection('education')} className="nav-link">Pendidikan</a>
           <a href="#skills" onClick={() => scrollToSection('skills')} className="nav-link">Kemampuan</a>
           <a href="#projects" onClick={() => scrollToSection('projects')} className="nav-link">Proyek</a>
+          <a href="#certificates" onClick={() => scrollToSection('certificates')} className="nav-link">Sertifikat</a>
           <a href="#contact" onClick={() => scrollToSection('contact')} className="nav-link">Kontak</a>
         </div>
 
