@@ -77,13 +77,6 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Proyek</h2>
-        {/* Test link untuk debugging */}
-        <div style={{margin: '20px 0', textAlign: 'center'}}>
-          <a href="https://github.com/MauliaDivaCahyani/WEB-PENJUALAN-BARANG.git" target="_blank" rel="noopener noreferrer" 
-             style={{padding: '10px 20px', background: '#333', color: 'white', textDecoration: 'none', borderRadius: '5px'}}>
-            TEST: GitHub Link
-          </a>
-        </div>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
