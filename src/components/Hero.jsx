@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImage from '/assets/profile.jpeg';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -22,27 +23,29 @@ const Hero = () => {
           <div className="hero-image">
             <div className="profile-placeholder">
               <img 
-                src="/assets/profile.jpg?" 
+                src={profileImage} 
                 alt="Maulia Diva Cahyani" 
                 className="profile-img"
+                loading="eager"
                 onLoad={(e) => {
                   console.log('✅ Profile image loaded successfully!');
+                  e.target.style.opacity = '1';
                   e.target.style.display = 'block';
                   // Hide any existing fallback
                   const fallback = e.target.parentNode.querySelector('.profile-fallback');
                   if (fallback) fallback.remove();
                 }}
                 onError={(e) => {
-                  console.error('❌ Failed to load profile image from:', e.target.src);
+                  console.error('❌ Failed to load profile image');
                   e.target.style.display = 'none';
-                  // Only add fallback if not already present
                   if (!e.target.parentNode.querySelector('.profile-fallback')) {
                     const fallback = document.createElement('div');
                     fallback.className = 'profile-fallback';
-                    fallback.innerHTML = '<div class="profile-initials">MDC</div><p>Upload foto profil ke public/assets/profile.jpg</p>';
+                    fallback.innerHTML = '<div class="profile-initials">MDC</div><p>Foto profil tidak dapat dimuat</p>';
                     e.target.parentNode.appendChild(fallback);
                   }
                 }}
+                style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
               />
             </div>
           </div>

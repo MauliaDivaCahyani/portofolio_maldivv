@@ -1,6 +1,7 @@
 import React from 'react';
 import rumahSakitImage from '../assets/images/apotek-utdi.png';
 import perhotelanImage from '../assets/images/roomzy-hotel.png';
+import jimpitanRondaImage from '../assets/images/kesorga-jimpitan.png';
 
 const Projects = () => {
   const projects = [
@@ -56,9 +57,9 @@ const Projects = () => {
       title: 'Sistem Jimpitan Ronda',
       description: 'Aplikasi web untuk manajemen jimpitan ronda dengan teknologi modern',
       technologies: ['React.js', 'Express.js'],
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80',
-      githubLink: 'https://github.com/MauliaDivaCahyani/sistemjimpitanronda-copyy.git',
-      status: 'coming-soon'
+      image: jimpitanRondaImage,
+      liveLink: 'https://kesorga.vmp.my.id/',
+      status: 'completed'
     },
     {
       id: 7,
@@ -76,6 +77,13 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Proyek</h2>
+        {/* Test link untuk debugging */}
+        <div style={{margin: '20px 0', textAlign: 'center'}}>
+          <a href="https://github.com/MauliaDivaCahyani/WEB-PENJUALAN-BARANG.git" target="_blank" rel="noopener noreferrer" 
+             style={{padding: '10px 20px', background: '#333', color: 'white', textDecoration: 'none', borderRadius: '5px'}}>
+            TEST: GitHub Link
+          </a>
+        </div>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
@@ -102,14 +110,26 @@ const Projects = () => {
                     <span key={`tool-${index}`} className="tool-tag">{tool}</span>
                   ))}
                 </div>
-                {(project.githubLink || project.uizardLink) && (
+                {(project.githubLink || project.uizardLink || project.liveLink) && (
                   <div className="project-links">
+                    {project.liveLink && (
+                      <a 
+                        href={project.liveLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="live-link"
+                        onClick={() => console.log('Clicking live link:', project.liveLink)}
+                      >
+                        🌐 Lihat Website
+                      </a>
+                    )}
                     {project.githubLink && (
                       <a 
                         href={project.githubLink} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="github-link"
+                        onClick={() => console.log('Clicking GitHub link:', project.githubLink)}
                       >
                         📂 Lihat di GitHub
                       </a>
@@ -120,6 +140,7 @@ const Projects = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="uizard-link"
+                        onClick={() => console.log('Clicking Uizard link:', project.uizardLink)}
                       >
                         🎨 Lihat di Uizard
                       </a>

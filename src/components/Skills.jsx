@@ -10,7 +10,7 @@ const Skills = () => {
   ];
   
   const softSkills = [
-    'Kerja sama tim', 'Komunikasi', 'Manajemen waktu', 'Pembelajaran mandiri'
+    'Kerja sama tim', 'Komunikasi', 'Manajemen waktu', 'Pembelajaran mandiri', 'Publik speaking'
   ];
   
   const languages = [

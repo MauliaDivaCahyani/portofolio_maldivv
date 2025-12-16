@@ -9,11 +9,11 @@ const Education = () => {
         <div className="education-content">
           <div className="education-description">
             <p>
-              Saat ini saya menempuh pendidikan di Program Studi Sistem Informasi, Universitas Teknologi Digital Indonesia. 
-              Saya mempelajari pengembangan sistem informasi, pemrograman web, basis data, serta perancangan antarmuka pengguna.
+              Saat ini saya menempuh pendidikan pada Program Studi Sistem Informasi di Universitas Teknologi Digital Indonesia.
+              Fokus pembelajaran saya meliputi pengembangan sistem informasi, pemrograman web, pengelolaan basis data, serta perancangan antarmuka pengguna.
             </p>
           </div>
-          
+
           <div className="education-details">
             <div className="education-card">
               <div className="education-logo">
