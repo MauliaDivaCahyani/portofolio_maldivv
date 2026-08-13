@@ -28,7 +28,7 @@ const Projects = () => {
       title: 'Kalkulator Web',
       description: 'Aplikasi kalkulator dengan antarmuka web yang responsif dan mudah digunakan',
       technologies: ['PHP', 'HTML', 'CSS'],
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
       githubLink: 'https://github.com/MauliaDivaCahyani/KALKULATOR-SEDERHANA.git',
       status: 'completed'
     },
@@ -67,8 +67,17 @@ const Projects = () => {
       description: 'Perancangan wireframe dan prototype sistem jimpitan ronda menggunakan Uizard',
       technologies: ['UI/UX Design'],
       tools: ['Uizard'],
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300&q=80',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
       uizardLink: 'https://app.uizard.io/p/2aba329a',
+      status: 'completed'
+    },
+    {
+      id: 8,
+      title: 'Dashboard Penjualan Excel',
+      description: 'Tampilan dashboard penjualan yang dibuat menggunakan Excel untuk membantu visualisasi data dan memantau performa penjualan.',
+      technologies: ['Excel', 'Data Visualization'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
+      pdfLink: '/assets/projects/Sales%20Dashboard.pdf',
       status: 'completed'
     }
   ];
@@ -81,8 +90,8 @@ const Projects = () => {
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   onError={(e) => {
                     e.target.src = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80';
@@ -103,12 +112,12 @@ const Projects = () => {
                     <span key={`tool-${index}`} className="tool-tag">{tool}</span>
                   ))}
                 </div>
-                {(project.githubLink || project.uizardLink || project.liveLink) && (
+                {(project.githubLink || project.uizardLink || project.liveLink || project.pdfLink) && (
                   <div className="project-links">
                     {project.liveLink && (
-                      <a 
-                        href={project.liveLink} 
-                        target="_blank" 
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="live-link"
                         onClick={() => console.log('Clicking live link:', project.liveLink)}
@@ -117,9 +126,9 @@ const Projects = () => {
                       </a>
                     )}
                     {project.githubLink && (
-                      <a 
-                        href={project.githubLink} 
-                        target="_blank" 
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="github-link"
                         onClick={() => console.log('Clicking GitHub link:', project.githubLink)}
@@ -128,14 +137,25 @@ const Projects = () => {
                       </a>
                     )}
                     {project.uizardLink && (
-                      <a 
-                        href={project.uizardLink} 
-                        target="_blank" 
+                      <a
+                        href={project.uizardLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="uizard-link"
                         onClick={() => console.log('Clicking Uizard link:', project.uizardLink)}
                       >
                         🎨 Lihat di Uizard
+                      </a>
+                    )}
+                    {project.pdfLink && (
+                      <a
+                        href={project.pdfLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="live-link"
+                        onClick={() => console.log('Clicking PDF link:', project.pdfLink)}
+                      >
+                        📄 Lihat File Dashboard
                       </a>
                     )}
                   </div>
