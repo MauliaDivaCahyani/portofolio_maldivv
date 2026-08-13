@@ -12,6 +12,15 @@ const Certificates = () => {
       image: "./assets/certificates/acara-seru-certificate.pdf" // Will be handled as PDF
     },
     {
+      id: 4,
+      title: "Sertifikat Magang",
+      issuer: "Pengembangan Sistem Jimpitan Ronda",
+      date: "2026",
+      description: "Sertifikat magang yang diperoleh dari pengembangan sistem jimpitan ronda.",
+      pdfPath: "/assets/certificates/SERTIFIKAT%20MAGANG_Maulia%20Diva%20Cahyani_23.pdf",
+      image: "/assets/certificates/SERTIFIKAT%20MAGANG_Maulia%20Diva%20Cahyani_23.pdf"
+    },
+    {
       id: 2,
       title: "Pencapaian Teknologi Informasi",
       issuer: "Institusi Pendidikan",
